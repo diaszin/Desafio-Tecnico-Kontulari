@@ -14,7 +14,7 @@ public class ErrorsExceptionHandlers extends ResponseEntityExceptionHandler {
 
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(error);
     }
-    @ExceptionHandler(RuntimeException.class)
+    @ExceptionHandler(Exception.class)
     public ResponseEntity<DefaultHandlerResponse> githubProfileNotFound(){
         DefaultHandlerResponse error = new DefaultHandlerResponse("Erro interno no servidor !");
 
