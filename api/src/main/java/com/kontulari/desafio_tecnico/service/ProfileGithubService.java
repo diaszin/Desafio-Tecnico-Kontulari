@@ -28,7 +28,6 @@ public class ProfileGithubService {
         String endpoint = BASE_URL + "users/" + username;
 
         try{
-
             Optional<GithubProfile> profile = Optional.ofNullable(githubClient.getClient().getForObject(endpoint, GithubProfile.class));
             return profile.orElseThrow();
         }
