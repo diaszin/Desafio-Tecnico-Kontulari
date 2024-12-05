@@ -1,17 +1,31 @@
 package com.kontulari.desafio_tecnico.entity;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.Builder;
 import lombok.Data;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 @Data
+@Builder
 public class GithubProfile {
     private String login;
-    private String html_url;
-    private int public_repos;
+    @JsonProperty("html_url")
+    private String htmlUrl;
+    @JsonProperty("public_repos")
+    private int quantity_repos;
     private int followers;
     private int following;
-    private Date created_at;
+    @JsonProperty("created_at")
+    private Date createdAt;
+
+    public String getCreatedAt() {
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        String formattedDate = simpleDateFormat.format(this.createdAt);
+
+        return formattedDate;
+    }
 }
 
 
