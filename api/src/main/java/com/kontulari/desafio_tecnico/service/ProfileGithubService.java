@@ -22,7 +22,7 @@ public class ProfileGithubService {
     @Autowired
     GithubClient githubClient;
 
-    @Value("${github.api.url}")
+    @Value("${GITHUB_API}")
     private String BASE_URL;
 
     public GithubProfile getProfile(String username) {
