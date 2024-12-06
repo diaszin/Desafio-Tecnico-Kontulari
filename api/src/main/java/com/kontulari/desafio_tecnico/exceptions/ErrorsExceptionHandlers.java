@@ -27,4 +27,11 @@ public class ErrorsExceptionHandlers extends ResponseEntityExceptionHandler {
 
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(error);
     }
+
+    @ExceptionHandler(RepositoriesIsEmpty.class)
+    public ResponseEntity<DefaultHandlerResponse> githubRepositoriesNotFound(RepositoriesIsEmpty e){
+        DefaultHandlerResponse error = new DefaultHandlerResponse(e.getMessage());
+
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(error);
+    }
 }

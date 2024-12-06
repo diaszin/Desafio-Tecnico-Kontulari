@@ -4,6 +4,7 @@ import com.kontulari.desafio_tecnico.client.GithubClient;
 import com.kontulari.desafio_tecnico.entity.GithubProfile;
 import com.kontulari.desafio_tecnico.entity.GithubRepository;
 import com.kontulari.desafio_tecnico.exceptions.ProfileNotFound;
+import com.kontulari.desafio_tecnico.exceptions.RepositoriesIsEmpty;
 import com.kontulari.desafio_tecnico.exceptions.RepositoriesNotFound;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -51,10 +52,17 @@ public class ProfileGithubService {
             ResponseEntity<GithubRepository[]> response = this.githubClient.getClient().getForEntity(endpoint, GithubRepository[].class);
             GithubRepository[] repositories = response.getBody();
 
+            if (repositories == null || repositories.length == 0){
+                throw new RepositoriesIsEmpty();
+            }
+
             return repositories;
         }
         catch (HttpClientErrorException.NotFound e){
             throw new RepositoriesNotFound();
+        }
+        catch (RepositoriesIsEmpty e){
+            throw e;
         }
         catch (Exception e){
             log.error(e.toString());
