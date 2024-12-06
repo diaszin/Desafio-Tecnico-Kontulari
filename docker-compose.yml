@@ -1,0 +1,15 @@
+services:
+  backend:
+    image: kontulari-backend 
+    container_name: kontulari-backend
+    restart: always
+    build: 
+      context: ./api
+      dockerfile: Dockerfile
+    volumes:
+      - ./api:/app
+    env_file:
+      - api/.env
+    ports:
+      - 8080:8080
+    
