@@ -6,9 +6,5 @@ WORKDIR /app
 COPY . .
 
 RUN ./gradlew clean
-RUN ./gradlew build  --scan --info
 
-
-
-
-ENTRYPOINT ["java", "-jar", "/app/build/libs/desafio-tecnico-0.0.1-SNAPSHOT.jar"]
+CMD ./gradlew bootRun --scan --info --continuous
