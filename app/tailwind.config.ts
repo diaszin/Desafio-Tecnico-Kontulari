@@ -10,6 +10,10 @@ export default {
     extend: {
       fontFamily:{
         inter: "var(--font-inter)"
+      },
+      colors:{
+        // Cor do site da Kontulari
+        "kontulari-color": "#1DE9B6"
       }
     },
   },
