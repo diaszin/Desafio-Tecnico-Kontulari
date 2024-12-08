@@ -1,5 +1,12 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import {Inter} from "next/font/google";
+
+const interFont = Inter({
+  weight: "variable",
+  subsets: ["latin"],
+  variable: "--font-inter"
+})
 
 export const metadata: Metadata = {
   title: "GithubSearch - Kontulari",
@@ -14,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang="pt-br">
       <body
-        className="antialiased"
+        className={`${interFont.variable} antialiased`}
       >
         {children}
       </body>
