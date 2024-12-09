@@ -19,6 +19,8 @@ public class GithubProfile {
     private int following;
     @JsonProperty("created_at")
     private Date createdAt;
+    @JsonProperty("avatar_url")
+    private String avatarUrl;
 
     public String getCreatedAt() {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
