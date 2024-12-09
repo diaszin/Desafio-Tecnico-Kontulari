@@ -14,7 +14,7 @@ public class GithubProfile {
     @JsonProperty("html_url")
     private String htmlUrl;
     @JsonProperty("public_repos")
-    private int quantity_repos;
+    private int quantityRepos;
     private int followers;
     private int following;
     @JsonProperty("created_at")
