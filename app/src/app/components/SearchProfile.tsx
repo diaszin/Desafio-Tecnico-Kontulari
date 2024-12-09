@@ -18,8 +18,8 @@ export default function SearchProfile(props: SearchProfileProps) {
    }}>
     <div className='w-full flex items-center justify-between h-[3rem] gap-4 max-lg:flex-col max-lg:gap-1'>
       <input onChange={(ev)=>{
-        const typedUsername = ev.currentTarget.value
-        if(typedUsername.trim().length > 0){
+        const typedUsername = ev.currentTarget.value.trim()
+        if(typedUsername.length > 0){
           setUsername(typedUsername)
         }
       }} placeholder='Digite o nome do usuário' autoFocus
