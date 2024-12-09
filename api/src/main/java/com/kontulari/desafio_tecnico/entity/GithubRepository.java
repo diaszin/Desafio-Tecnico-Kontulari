@@ -19,4 +19,11 @@ public class GithubRepository {
     private String description;
     @JsonProperty("created_at")
     private Date createdAt;
+
+    public String getCreatedAt() {
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        String formattedDate = simpleDateFormat.format(this.createdAt);
+
+        return formattedDate;
+    }
 }
