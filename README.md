@@ -124,7 +124,7 @@ export default function HelloWorld(props: HelloWorldProps){
 
 */configuration* - Responsável pela as configurações globais da aplicação. No caso atual, pela as configurações de CORS do projeto
 
-*/service* - Responsável pelos os ações das entidades da nossa aplicação. Como consulta ou inserção de algum dado.
+*/service* - Responsável pelas as ações das entidades da nossa aplicação. Como consulta ou inserção de algum dado.
 
 */controller* - Responsável pela as chamadas das requisições, tendo um contato direto com a */service*
 
