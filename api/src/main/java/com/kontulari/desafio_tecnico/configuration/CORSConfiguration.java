@@ -13,8 +13,8 @@ public class CORSConfiguration implements WebMvcConfigurer {
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         String ACCEPTED_URL_CONNECTION = System.getenv().get("ACCEPTED_URL_CONNECTION");
-        registry.addMapping("/**")
+        registry.addMapping("/profile/*")
                 .allowedOrigins(ACCEPTED_URL_CONNECTION)
-                .allowedMethods("*");
+                .allowedMethods("GET", "HEAD");
     }
 }
