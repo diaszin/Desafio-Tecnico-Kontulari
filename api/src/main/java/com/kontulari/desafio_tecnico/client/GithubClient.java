@@ -9,7 +9,7 @@ public class GithubClient {
     private final RestTemplate client;
 
 
-    GithubClient(){
+    private GithubClient(){
         this.client = new RestTemplate();
     }
 
