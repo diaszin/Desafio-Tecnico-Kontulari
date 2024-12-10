@@ -4,6 +4,6 @@ export default interface GithubProfile{
     html_url: string
     followers: number
     public_repos: number
-    description: string
+    bio: string
     avatar_url: string
 }
