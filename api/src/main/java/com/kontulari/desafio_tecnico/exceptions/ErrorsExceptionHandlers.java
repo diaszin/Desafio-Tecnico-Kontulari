@@ -34,4 +34,11 @@ public class ErrorsExceptionHandlers extends ResponseEntityExceptionHandler {
 
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(error);
     }
+
+    @ExceptionHandler(RateLimitExceeded.class)
+    public ResponseEntity<DefaultHandlerResponse> githubRateLimitExceeded(RateLimitExceeded e){
+        DefaultHandlerResponse error = new DefaultHandlerResponse(e.getMessage());
+
+        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(error);
+    }
 }
