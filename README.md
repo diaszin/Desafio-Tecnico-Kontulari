@@ -34,7 +34,7 @@ Na pasta *api/* , coloque um `.env` com as seguintes informações:
 
 ``````bash
 GITHUB_API=<api-do-github> # A URL da api do github
-ACCEPTED_URL_CONNECTION= <url-do-frontend> # A URL do frontend
+ACCEPTED_URL_CONNECTION=<url-do-frontend> # A URL do frontend
 ``````
 
 Já na pasta *app/*, coloque um `.env` com:
@@ -61,6 +61,15 @@ No backend:
 cd api
 ./gradlew clean
 ./gradlew build
+``````
+
+Ou caso queira usar o **Docker**, execute o comando `docker-compose up -d --build` na pasta pai do projeto. 
+
+**Obs**: Se estiver utilizado o **Docker**, lembre-se que as variáveis de ambiente devem ser alteradas, com esse valores:
+
+``````bash
+NEXT_PUBLIC_BACKEND_URL=backend # Nome do serviço do docker-compose que roda a api
+ACCEPTED_URL_CONNECTION=frontend # Nome do serviço do docker-compose que roda o app
 ``````
 
 
